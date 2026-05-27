@@ -30,11 +30,22 @@ npm run start
 {
   "mcpServers": {
     "clock-pro": {
+      "command": "/absolute/path/to/bad-time-mcp/node_modules/.bin/tsx",
+      "args": ["/absolute/path/to/bad-time-mcp/server.ts"]
+    },
+    "filesystem": {
       "command": "npx",
-      "args": ["-y", "tsx", "/absolute/path/to/server.ts"]
+      "args": ["-y", "@modelcontextprotocol/server-filesystem", "/Users/YOUR_USERNAME"]
     }
   }
 }
+```
+
+Or via Claude CLI:
+
+```bash
+claude mcp add clock-pro -- /absolute/path/to/bad-time-mcp/node_modules/.bin/tsx /absolute/path/to/bad-time-mcp/server.ts
+claude mcp add filesystem -- npx -y @modelcontextprotocol/server-filesystem ~
 ```
 
 ## Usage
